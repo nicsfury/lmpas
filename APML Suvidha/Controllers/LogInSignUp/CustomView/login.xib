@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="login" customModule="APML_Suvidha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFc-zh-tPZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We need to authenticate your account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSF-kl-ncH">
+                            <rect key="frame" x="27" y="8" width="321" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9m-KU-IE2">
+                            <rect key="frame" x="8" y="74" width="359" height="49"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Slide 1" translatesAutoresizingMaskIntoConstraints="NO" id="IXp-dQ-dmN">
+                                    <rect key="frame" x="27" y="8" width="20" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="6DX-jA-IKR"/>
+                                        <constraint firstAttribute="width" constant="20" id="V6N-4i-Dl1"/>
+                                    </constraints>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8k-0c-zG6">
+                                    <rect key="frame" x="63" y="8" width="1" height="25"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="1" id="PbP-Uh-3RG"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x5q-A7-MmA">
+                                    <rect key="frame" x="27" y="43" width="315" height="1"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </view>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" placeholder="Enter Your 10-digit mobile number" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKB-Ek-NvL" customClass="CustomUITextField" customModule="APML_Suvidha" customModuleProvider="target">
+                                    <rect key="frame" x="72" y="12" width="270" height="23"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maximumCharacters">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="lKB-Ek-NvL" secondAttribute="bottom" constant="14" id="1To-Iz-tSw"/>
+                                <constraint firstAttribute="height" constant="49" id="208-YP-qJN"/>
+                                <constraint firstItem="lKB-Ek-NvL" firstAttribute="leading" secondItem="O8k-0c-zG6" secondAttribute="trailing" constant="8" id="Aeh-m9-s1g"/>
+                                <constraint firstItem="IXp-dQ-dmN" firstAttribute="leading" secondItem="T9m-KU-IE2" secondAttribute="leading" constant="27" id="Ge8-gI-0GW"/>
+                                <constraint firstItem="O8k-0c-zG6" firstAttribute="bottom" secondItem="IXp-dQ-dmN" secondAttribute="bottom" id="HQi-WW-xoM"/>
+                                <constraint firstItem="IXp-dQ-dmN" firstAttribute="top" secondItem="T9m-KU-IE2" secondAttribute="top" constant="8" id="Wj4-kt-vUx"/>
+                                <constraint firstAttribute="bottom" secondItem="IXp-dQ-dmN" secondAttribute="bottom" constant="16" id="cJc-iN-Sux"/>
+                                <constraint firstItem="O8k-0c-zG6" firstAttribute="leading" secondItem="IXp-dQ-dmN" secondAttribute="trailing" constant="16" id="fJR-1K-lOh"/>
+                                <constraint firstItem="lKB-Ek-NvL" firstAttribute="top" secondItem="T9m-KU-IE2" secondAttribute="top" constant="12" id="oOv-I6-6Yn"/>
+                                <constraint firstItem="O8k-0c-zG6" firstAttribute="top" secondItem="IXp-dQ-dmN" secondAttribute="top" id="u1K-dY-kLN"/>
+                                <constraint firstAttribute="trailing" secondItem="lKB-Ek-NvL" secondAttribute="trailing" constant="17" id="yXb-Sz-Mhe"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A One-Time Password (OTP) will be sent to your Mobile Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuU-oe-fq4">
+                            <rect key="frame" x="27.5" y="139" width="320.5" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZq-RL-qwX">
+                            <rect key="frame" x="27" y="180" width="321" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.20398230380227367" blue="0.1504470169170844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="j4D-5B-LwT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" title="SEND OTP">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="LSF-kl-ncH" secondAttribute="trailing" constant="27" id="1NT-9c-xnl"/>
+                        <constraint firstItem="NuU-oe-fq4" firstAttribute="leading" secondItem="pFc-zh-tPZ" secondAttribute="leading" constant="27" id="1qo-6m-wmt"/>
+                        <constraint firstItem="T9m-KU-IE2" firstAttribute="top" secondItem="LSF-kl-ncH" secondAttribute="bottom" constant="46.5" id="JA6-3V-wJH"/>
+                        <constraint firstAttribute="trailing" secondItem="NuU-oe-fq4" secondAttribute="trailing" constant="27" id="RIV-zs-ZMP"/>
+                        <constraint firstItem="NuU-oe-fq4" firstAttribute="top" secondItem="T9m-KU-IE2" secondAttribute="bottom" constant="16" id="RNP-i6-uBd"/>
+                        <constraint firstItem="QZq-RL-qwX" firstAttribute="top" secondItem="NuU-oe-fq4" secondAttribute="bottom" constant="26.5" id="TnU-71-Lwy"/>
+                        <constraint firstItem="LSF-kl-ncH" firstAttribute="leading" secondItem="pFc-zh-tPZ" secondAttribute="leading" constant="27" id="ggF-9E-Sdq"/>
+                        <constraint firstAttribute="trailing" secondItem="QZq-RL-qwX" secondAttribute="trailing" constant="27" id="h1G-bG-VvN"/>
+                        <constraint firstItem="LSF-kl-ncH" firstAttribute="top" secondItem="pFc-zh-tPZ" secondAttribute="top" constant="8" id="kcR-3k-Xhj"/>
+                        <constraint firstItem="T9m-KU-IE2" firstAttribute="leading" secondItem="pFc-zh-tPZ" secondAttribute="leading" constant="8" id="spa-wz-qm8"/>
+                        <constraint firstAttribute="trailing" secondItem="T9m-KU-IE2" secondAttribute="trailing" constant="8" id="tHF-ML-xkX"/>
+                        <constraint firstItem="QZq-RL-qwX" firstAttribute="leading" secondItem="pFc-zh-tPZ" secondAttribute="leading" constant="27" id="wUk-gh-ew7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="pFc-zh-tPZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KgB-ru-0hV"/>
+                <constraint firstItem="pFc-zh-tPZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bba-ir-c37"/>
+                <constraint firstItem="pFc-zh-tPZ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="pUb-Oy-k8O"/>
+                <constraint firstItem="pFc-zh-tPZ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="yuC-S7-bnj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="mobileTxtField" destination="lKB-Ek-NvL" id="xzV-Ah-a3s"/>
+                <outlet property="sendOtpBtn" destination="QZq-RL-qwX" id="AM5-Ax-R7C"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Slide 1" width="414" height="736"/>
+    </resources>
+</document>
