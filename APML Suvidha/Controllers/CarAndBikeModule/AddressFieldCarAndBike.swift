@@ -8,20 +8,41 @@
 
 import UIKit
 class AddressFieldCarAndBike: UIViewController{
+    //MARK: - Properties
     
+    @IBOutlet weak var destinationLbl: UILabel!
+    @IBOutlet weak var originLbl: UILabel!
+    @IBOutlet weak var enquiryNumberLbl: UILabel!
+    
+    //MARK: - UIViewController Method
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        statusBar.isHidden = true
+      
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        setupLayout()
+    }
+    //MARK: - Custom Method
+    func setupLayout(){
+        originLbl.text = AppUserDefaults.value(forKey: .Location_Origin, fallBackValue: "").string!
+        destinationLbl.text = AppUserDefaults.value(forKey: .Location_Destination, fallBackValue: "").string!
+        enquiryNumberLbl.text = AppUserDefaults.value(forKey: .UNIQUE, fallBackValue: "").string!
+    }
+    //MARK: - IBOutlet Method
     @IBAction func backClickedBtn(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func nextClikedBtn(_ sender: Any) {
-        let PickUpDateVC = PickUpDateCarAndBike.instantiate(fromAppStoryboard: .CarAndBikeStoryboardMain)
-        self.navigationController?.pushViewController(PickUpDateVC, animated: true)
+        let iSPickUp = AppUserDefaults.value(forKey: .IsPickUpSave, fallBackValue: "").string
+        if  iSPickUp == AppConstants.YesStr{
+            let PickUpDateVC = PickUpDateCarAndBike.instantiate(fromAppStoryboard: .CarAndBikeStoryboardMain)
+            self.navigationController?.pushViewController(PickUpDateVC, animated: true)
+        }else{
+            self.showToast(message: "Fill PickUp Location First")
+        }
+        
+    
     }
     
     @IBAction func addressFieldClikedBtn(_ sender: Any) {

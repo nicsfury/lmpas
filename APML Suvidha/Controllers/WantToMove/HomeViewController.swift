@@ -87,17 +87,22 @@ class HomeViewController: UIViewController {
     @IBAction func wantToMoveClickedBtn(_ sender: Any){
         switch (sender as AnyObject).tag {
         case 1:
+            AppUserDefaults.save(value: AppConstants.OfficeType, forKey: .MOVE)
             AppUserDefaults.removeMoveValue()
             setStepOne(firstMove: AppConstants.CompleteHouseHoldType)
         case 2:
             AppUserDefaults.save(value: AppConstants.OfficeType, forKey: .MOVE)
+            AppUserDefaults.removeMoveValue()
+
             setStepOne(firstMove: AppConstants.OfficeType)
         case 4:
             AppUserDefaults.save(value: AppConstants.FewItemsType, forKey: .MOVE)
+            AppUserDefaults.removeMoveValue()
              setStepOne(firstMove: AppConstants.FewItemsType)
         case 3:
             AppUserDefaults.save(value: AppConstants.CarAndBikeType, forKey: .MOVE)
-             setStepOne(firstMove: AppConstants.CarAndBikeType)
+            AppUserDefaults.removeMoveValue()
+            setStepOne(firstMove: AppConstants.CarAndBikeType)
         default:
             break
         }

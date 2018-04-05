@@ -31,8 +31,20 @@ class AppConstants {
     static let METHOD_ARTICLE_UPDATE = "steppp3add"
     static let METHOD_FINAL_REVIEW = "FinalReview"
     static let METHOD_DELETE_ITEM = "deleteManualItem"
-    
-    
+    static let METHOD_GET_FAQ = "getFaq"
+    static let METHOD_FAQ_OFFICE = "Office"
+    static let METHOD_FAQ_INTERNATION = "International"
+    static let METHOD_FAQ_INDUSTRIAL = "Industrial"
+    static let METHOD_FAQ_DOMESTIC = "Domestic"
+    static let METHOD_FAQ_CAR_BIKE = "CarBike"
+    static let METHOD_FAQ_OTHER = "Others"
+    static let METHOD_PRIVACY_POLICY = "termsCondition"
+    static let METHOD_GET_PROFILE = "getprofile"
+    static let METHOD_GET_Billing_Details = "billingdetailsbusiness"
+    static let METHOD_SET_Billing_Details = "insertbillingdetails"
+    static let METHOD_ADD_ITEM_CAR_AND_BIKE = "carbykeupload"
+    static let METHOD_DELETE_ITEM_CAR_AND_BIKE = "deletecarbykeupload"
+    static let METHOD_UPADTE_ITEM_CAR_AND_BIKE = "updatecarbykeupload"
     //UserDefault Var
     static let Location_Origin = "origin"
     static let Location_Destination = "destination"

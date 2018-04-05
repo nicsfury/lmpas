@@ -19,7 +19,7 @@ class MoveDateOffice: UIViewController {
     
     //MARK: - UIViewController Method
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(true,animated:true)
         inquiryNumberLbl.text = AppUserDefaults.value(forKey: .UNIQUE, fallBackValue: "").string!
         originLbl.text = AppUserDefaults.value(forKey: .Location_Origin, fallBackValue: "").string!
         destinationLbl.text = AppUserDefaults.value(forKey: .Location_Destination, fallBackValue: "").string!

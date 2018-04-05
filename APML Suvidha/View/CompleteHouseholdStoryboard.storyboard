@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -2559,7 +2558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shj-ka-Rcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3908" y="824.43778110944538"/>
+            <point key="canvasLocation" x="3913" y="876"/>
         </scene>
         <!--Final Review Complete-->
         <scene sceneID="Z3e-G4-jD7">
@@ -2989,7 +2988,7 @@
                                                                                 <constraint firstAttribute="height" constant="8" id="2gg-3q-3MF"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                                            <nil key="textColor"/>
+                                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DELHI, fly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vS-6p-Hp8">

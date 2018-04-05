@@ -13,10 +13,7 @@ import MessageUI
 
 class HelpAndSupport: UIViewController{
     let arrayList = ["Call Us","Email Us","Raise a Request","Privacy Policy","Faq"]
-    override func viewWillAppear(_ animated: Bool) {
-        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        statusBar.isHidden = true
-    }
+  
     
     @IBAction func backClcikedBtn(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
@@ -76,9 +73,6 @@ extension HelpAndSupport: UITableViewDelegate,MFMailComposeViewControllerDelegat
             } else {
                 // show failure alert
             }
-        
-        
-        
     }
     
     

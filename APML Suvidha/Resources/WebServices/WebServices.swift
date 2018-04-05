@@ -19,6 +19,286 @@ class WebServices: NSObject {
     private override init() {
         
     }
+    //MARK: API - FinalReview On Car/Bike Api Method
+    
+    func finalReviewCarAndBike(methodName: String ,Uniq: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"uniqid\":\"%@\"}",methodName,Uniq)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    //MARK: API - Update Item On Car/Bike Api Method
+    
+    func updateItemCarAndBike(methodName: String ,Uniq: String,carbyketype: String,cartbykedetails: String,cartbykevalue: String,randid: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"uniqid\":\"%@\",\"carbyketype\":\"%@\",\"cartbykedetails\":\"%@\",\"cartbykevalue\":\"%@\",\"randid\":\"%@\"}",methodName,Uniq,carbyketype,cartbykedetails,cartbykevalue,randid)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    //MARK: API - Delete Item On Car/Bike Api Method
+    
+    func deleteItemCarAndBike(methodName: String ,Uniq: String,randid: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"uniqid\":\"%@\",\"randid\":\"%@\"}",methodName,Uniq,randid)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    
+    
+    //MARK: API - Add Item On Car/Bike Api Method
+    
+    func addItemCarAndBike(methodName: String ,Uniq: String,carbyketype: String,cartbykedetails: String,cartbykevalue: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"uniqid\":\"%@\",\"carbyketype\":\"%@\",\"cartbykedetails\":\"%@\",\"cartbykevalue\":\"%@\"}",methodName,Uniq,carbyketype,cartbykedetails,cartbykevalue)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    //MARK: API - SET Billing Api Method
+    
+    func setBilling(methodName: String ,Uniq: String,Type: String,FirstName: String,LastName: String,Email: String,Mobile: String,AlterMobile: String,City: String,ZipCode: String,State: String,Country: String,Address: String,Gst: String,Pan: String,StateCode: String,TaxState: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"uniqid\":\"%@\",\"type\":\"%@\",\"firstname\":\"%@\",\"lastname\":\"%@\",\"email\":\"%@\",\"mobile\":\"%@\",\"alternativemobile\":\"%@\",\"city\":\"%@\",\"zipcode\":\"%@\",\"state\":\"%@\",\"country\":\"%@\",\"address\":\"%@\",\"gst\":\"%@\",\"pan\":\"%@\",\"statecode\":\"%@\",\"taxstate\":\"%@\"}",methodName,Uniq,Type,FirstName,LastName,Email,Mobile,AlterMobile,City,ZipCode,State,Country,Address,Gst,Pan,StateCode,TaxState)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    //MARK: API - GET Billing Api Method
+    
+    func getBilling(methodName: String ,Uniq: String,Type: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"uniqid\":\"%@\",\"type\":\"%@\"}",methodName,Uniq,Type)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    
+    
+    //MARK: API - GET Profile Api Method
+    
+    func getProfile(methodName: String ,mobile: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"mobile\":\"%@\"}",methodName,mobile)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    
+    //MARK: API - Privacy Policy Api Method
+    
+    func getPrivacyPolicy(methodName: String , completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\"}",methodName)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    
+    
+    
+    //MARK: API - Faq Api Method
+    
+    func getFaq(methodName: String ,categoryName: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        SVProgressHUD.setDefaultMaskType(.clear)
+        
+        let paramsitem = String(format:"{\"method\":\"%@\",\"category\":\"%@\"}",methodName,categoryName)
+        let parameters:[String: String] = ["json_data": paramsitem]
+        let url = URL(string: AppConstants.kBASE_SERVICE_URL)
+        
+        Alamofire.request(url!, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON(completionHandler: {response in
+            switch(response.result){
+            case .success(_):
+                if let data = response.result.value as? [String: Any]{
+                    completion(data, nil)
+                    SVProgressHUD.dismiss()
+                }
+                else{
+                    completion(nil, nil)
+                    SVProgressHUD.dismiss()
+                }
+                break
+            case .failure(_):
+                let err = response.result.error
+                completion(nil, err)
+                SVProgressHUD.dismiss()
+                break
+            }
+        })
+    }
+    
+    
     //MARK: API - Delete Article FinalReview App
     
     func deleteItemFinalReview(methodName: String ,uniqid: String,itemId: String, completion: @escaping (_ success:[String: Any]? ,_ error:Error?) -> Void) {

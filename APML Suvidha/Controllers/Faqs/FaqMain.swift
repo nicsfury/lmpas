@@ -11,16 +11,15 @@ import UIKit
 
 class FaqMain: UIViewController{
     
+    //MARK: - Properties
     let faqArray = ["Office","International","Industrial","Domestic","Car/Bike","Others"]
-    override func viewWillAppear(_ animated: Bool) {
-        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        statusBar.isHidden = true
-    }
+   
+    //MARK: - IBOutlet Method
     @IBAction func backClickedBtn(_ sender: Any) {
     self.navigationController?.popViewController(animated: true)
     }
 }
-
+//MARK: - UITableViewDelegate Method
 extension FaqMain: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -29,11 +28,27 @@ extension FaqMain: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let faqMainVC = FaqSubMain.instantiate(fromAppStoryboard: .FaqsMain)
+        switch indexPath.row {
+        case 0:
+            faqMainVC.CatValue = AppConstants.METHOD_FAQ_OFFICE
+        case 1:
+            faqMainVC.CatValue = AppConstants.METHOD_FAQ_INTERNATION
+        case 2:
+            faqMainVC.CatValue = AppConstants.METHOD_FAQ_INDUSTRIAL
+        case 3:
+            faqMainVC.CatValue = AppConstants.METHOD_FAQ_DOMESTIC
+        case 4:
+            faqMainVC.CatValue = AppConstants.METHOD_FAQ_CAR_BIKE
+        case 5:
+            faqMainVC.CatValue = AppConstants.METHOD_FAQ_OTHER
+        default:
+            break
+        }
         self.navigationController?.pushViewController(faqMainVC, animated: true)
     }
     
 }
-
+//MARK: - UITableViewDataSource Method
 extension FaqMain: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return faqArray.count

@@ -23,6 +23,13 @@ enum AppUserDefaults {
         case ExpectedMoveDateComplete
         case AreaStatus
         
+        
+      
+        case BackToVC
+        case BackToVCType
+        case BackToVCRandid
+        case BackToVCName
+        case BackToVCValue
         //removeable After Use
         
         case AreaOriginLocation
@@ -98,7 +105,13 @@ extension AppUserDefaults {
         UserDefaults.standard.removeObject(forKey: Key.IsPickUpSave.rawValue)
         UserDefaults.standard.synchronize()
     }
-    
+    static func removeCarAndBikeItem(){
+        UserDefaults.standard.removeObject(forKey: Key.BackToVCType.rawValue)
+        UserDefaults.standard.removeObject(forKey: Key.BackToVCRandid.rawValue)
+        UserDefaults.standard.removeObject(forKey: Key.BackToVCName.rawValue)
+        UserDefaults.standard.removeObject(forKey: Key.BackToVC.rawValue)
+        UserDefaults.standard.removeObject(forKey: Key.BackToVCValue.rawValue)
+    }
     static func removeAllValues() {
         
         let appDomain = Bundle.main.bundleIdentifier!
